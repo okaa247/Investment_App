@@ -34,20 +34,21 @@ Withdraw_Amount = int(input("Enter Amount to Withdraw: "))
 
 #7% VAT
 Vert = 7/100 * Withdraw_Amount
+rounded_vert = round(Vert, 2)
 
 #Final Balance...
 Final_Bal1 = Wallet_Bal - Withdraw_Amount
 
 #Final Balance Inclusive of 7% VAT
-Final_Bal2 = Final_Bal1 - Vert
+Final_Bal2 = Final_Bal1 - rounded_vert
 
 
 def Account_mgt():
      if  Withdraw_Amount > Wallet_Bal or Final_Bal2 < 0:
-      print("You have Insufficient Funds!")
+         print("You have Insufficient Funds!")
      else:
-      print("Withdrawal successful, your account has been debited with", Withdraw_Amount, "and 7% VAT of", Vert, "has been deducted.")
-      print("Your Current Balance is", Final_Bal2)
+         print("Withdrawal successful, your account has been debited with", Withdraw_Amount, "and 7% VAT of", rounded_vert, "has been deducted.")
+         print("Your Current Balance is", Final_Bal2)
 
 
 Account_mgt()
